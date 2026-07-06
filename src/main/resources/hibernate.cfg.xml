@@ -10,7 +10,7 @@
             jdbc:postgresql://db.niytqxchqemlfzpugyyg.supabase.co:5432/postgres?sslmode=require
         </property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">Lychanhyen1@</property>
+        <property name="hibernate.connection.password">Lychanylen1</property>
 
         <!-- ===== HIBERNATE PROPERTIES ===== -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
