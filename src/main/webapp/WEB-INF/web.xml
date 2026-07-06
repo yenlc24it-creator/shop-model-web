@@ -30,6 +30,14 @@
 
   <!-- Servlets -->
   <servlet>
+    <servlet-name>HealthServlet</servlet-name>
+    <servlet-class>com.shop.servlet.HealthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HealthServlet</servlet-name>
+    <url-pattern>/health</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>HomeServlet</servlet-name>
     <servlet-class>com.shop.servlet.HomeServlet</servlet-class>
   </servlet>
@@ -128,4 +136,8 @@
     <servlet-name>AdminOrderServlet</servlet-name>
     <url-pattern>/admin/orders</url-pattern>
   </servlet-mapping>
+  <context-param>
+    <param-name>org.apache.tomcat.core.StandardServer.shutdown</param-name>
+    <param-value>SHUTDOWN</param-value>
+  </context-param>
 </web-app>

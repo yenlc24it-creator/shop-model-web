@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Tắt lệnh shutdown từ remote -->
+    <Parameter name="org.apache.catalina.core.StandardServer.shutdown" value="SHUTDOWN" override="false"/>
+</Context>
