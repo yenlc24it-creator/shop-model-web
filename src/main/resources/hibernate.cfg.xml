@@ -4,21 +4,24 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <!-- Database connection settings -->
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- ===== POSTGRESQL / SUPABASE CONNECTION ===== -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/shop?useSSL=false&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8
+            jdbc:postgresql://db.niytqxchqemlfzpugyyg.supabase.co:5432/postgres?sslmode=require
         </property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Lychanhyen1@</property>
 
-        <!-- Hibernate properties -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <!-- ===== HIBERNATE PROPERTIES ===== -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- Entity mapping -->
+        <!-- ===== POOL SIZE (Supabase free tier limit) ===== -->
+        <property name="hibernate.connection.pool_size">5</property>
+
+        <!-- ===== ENTITY MAPPING ===== -->
         <mapping class="com.shop.entity.User"/>
         <mapping class="com.shop.entity.Category"/>
         <mapping class="com.shop.entity.Product"/>

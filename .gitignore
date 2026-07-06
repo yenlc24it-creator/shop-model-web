@@ -1,5 +1,5 @@
 # Maven
-
+target/
 *.log
 
 # IntelliJ IDEA
@@ -16,7 +16,7 @@ Thumbs.db
 # Build files
 *.class
 *.jar
-*.war
+ *.war
 
 # Node (nếu sau này có frontend)
 node_modules/

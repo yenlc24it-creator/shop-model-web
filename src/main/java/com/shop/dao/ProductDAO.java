@@ -10,7 +10,6 @@ import java.util.List;
 
 public class ProductDAO {
 
-    // Phương thức chính: thêm tham số onlyInStock để lọc sản phẩm còn hàng
     public List<Product> findAll(int page, int size, String keyword, Long categoryId, boolean onlyInStock) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             String hql = "from Product where 1=1";
@@ -18,6 +17,7 @@ public class ProductDAO {
                 hql += " and stock > 0";
             }
             if (keyword != null && !keyword.trim().isEmpty()) {
+                // PostgreSQL: dùng ILIKE để không phân biệt hoa/thường
                 hql += " and lower(name) like :keyword";
             }
             if (categoryId != null) {
@@ -37,7 +37,6 @@ public class ProductDAO {
         }
     }
 
-    // Phương thức count có tham số onlyInStock
     public long count(String keyword, Long categoryId, boolean onlyInStock) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             String hql = "select count(*) from Product where 1=1";
@@ -61,7 +60,7 @@ public class ProductDAO {
         }
     }
 
-    // Các phương thức overload để tương thích với code cũ (mặc định onlyInStock = false)
+    // Các phương thức khác giữ nguyên
     public List<Product> findAll(int page, int size, String keyword, Long categoryId) {
         return findAll(page, size, keyword, categoryId, false);
     }
