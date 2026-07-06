@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+/* Reset & base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Header */
+.navbar-brand {
+    font-weight: 700;
+    color: #0d6efd !important;
+}
+
+/* ===== CARD SẢN PHẨM ===== */
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* KHUNG ẢNH CỐ ĐỊNH - DÙNG !important để chắc chắn */
+.product-card .card-img-top {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    background-color: #f0f0f0 !important;
+    flex-shrink: 0 !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+/* Phần body card */
+.product-card .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.product-card .card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+.product-card .price {
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+.product-card .text-muted {
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+.product-card .input-group {
+    max-width: 180px;
+}
+
+/* ===== GIỎ HÀNG ===== */
+.cart-table img.cart-thumbnail {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+/* ===== CHI TIẾT SẢN PHẨM ===== */
+.detail-img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* ===== QR ===== */
+.qr-image {
+    max-width: 220px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 8px;
+    background: #fff;
+}
+
+/* ===== ADMIN ===== */
+.admin-sidebar {
+    background-color: #212529;
+    min-height: 100vh;
+    color: white;
+}
+.admin-sidebar a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.admin-sidebar a:hover {
+    background-color: #495057;
+    color: white;
+}
+.admin-content {
+    padding: 20px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #212529;
+    color: #ccc;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 576px) {
+    .product-card .card-img-top {
+        height: 160px !important;
+    }
+}
